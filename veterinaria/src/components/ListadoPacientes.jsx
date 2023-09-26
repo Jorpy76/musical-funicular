@@ -1,6 +1,6 @@
 import Pacientes from "./Pacientes";
 
-const ListadoPacientes = ({ pacientes, setPaciente }) => {
+const ListadoPacientes = ({ pacientes, setPaciente, eliminarPaciente }) => {
   //  console.log(pacientes.lenght === 0)
   // tomamos la función en el componente ( setPaciente|)
 
@@ -19,6 +19,7 @@ const ListadoPacientes = ({ pacientes, setPaciente }) => {
 			 	  key={paciente.id}
 			  	paciente={paciente} 
 				  setPaciente = {setPaciente}	
+          eliminarPaciente={eliminarPaciente}
 				/>
           ))}
         </>

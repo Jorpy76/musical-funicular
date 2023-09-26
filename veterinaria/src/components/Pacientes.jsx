@@ -1,5 +1,5 @@
 
-const Pacientes = ({paciente, setPaciente}) => {
+const Pacientes = ({paciente, setPaciente, eliminarPaciente}) => {
     // Destructuring
     const {nombre, propietario, email, fecha, sintomas, id} = paciente
 
@@ -37,6 +37,7 @@ const Pacientes = ({paciente, setPaciente}) => {
                 <button
                type="button" 
                className="py-2 px-10 bg-red-500 hover:bg-red-600 text-white font-bold uppercase rounded-lg"
+               onClick={() => eliminarPaciente (id)}
                 >Eliminar</button> 
           </div> 
 
