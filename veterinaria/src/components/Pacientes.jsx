@@ -1,7 +1,7 @@
 
 const Pacientes = ({paciente, setPaciente}) => {
     // Destructuring
-    const {nombre, propietario, email, fecha, sintomas} = paciente
+    const {nombre, propietario, email, fecha, sintomas, id} = paciente
 
     return (
     
