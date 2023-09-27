@@ -10,6 +10,19 @@ function App() {
   const [pacientes, setPacientes] = useState ([])
   const [paciente, setPaciente] = useState ({})
 
+// El orden en que se declaren los effects es el orden en que se ejecutan....
+  useEffect(() => {
+    const obetenerLs = ()=> {
+      const pacientesLs = JSON.parse(localStorage.getItem('pacientes')) ?? []
+      setPacientes(pacientesLs)
+    }
+    obetenerLs()
+  }, [])
+
+  useEffect(()=>{
+    localStorage.setItem('pacientes', JSON.stringify(pacientes))
+  },[pacientes])
+
   const eliminarPaciente = id => {
     const pacientesActualizados = pacientes.filter( paciente => paciente.id !== id)
     setPacientes(pacientesActualizados)
